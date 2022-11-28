@@ -1,5 +1,7 @@
 package br.com.suprematech.clienteequipamento.cliente.application.api;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.suprematech.clienteequipamento.cliente.application.service.ClienteService;
@@ -17,6 +19,13 @@ public class ClienteController implements ClienteAPI {
 		ClienteResponse clienteCriado = clienteService.criaCliente(clienteRequest);
 		log.info("[Finaliza] ClienteController - postCliente");		
 		return clienteCriado;
+	}
+
+	@Override
+	public List<ClienteListResponse> getTodosClientes() {
+		log.info("[inicia] ClienteController - getTodosClientes");
+		log.info("[Finaliza] ClienteController - getTodosClientes");
+		return null;
 	}
 
 }
