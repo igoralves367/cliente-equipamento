@@ -30,7 +30,8 @@ public class ClienteApplicationService implements ClienteService {
 	@Override
 	public List<ClienteListResponse> buscarTodosClientes() {
 		log.info("[inicia] ClienteApplicationService - buscarTodosClientes");
+		List<Cliente> clientes = clienteRepository.buscaTodosClientes();
 		log.info("[inicia] ClienteApplicationService - buscarTodosClientes");
-		return null;
+		return ClienteListResponse.converte(clientes);
 	}
 }
