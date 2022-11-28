@@ -16,6 +16,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.br.CPF;
 
+import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,7 +25,8 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 public class Cliente {
-        @Id
+        
+		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		@Column(columnDefinition = "uuid", name = "id", updatable = false, unique = true, nullable = false)
 		private UUID idCliente; //segurança
@@ -47,4 +49,14 @@ public class Cliente {
 		private LocalDateTime dataHoraDoCadastro;
 		private LocalDateTime dataHoraDaUltimaAlteracao;
 		
+		public Cliente(ClienteRequest clienteRequest) {
+			this.nomeCompleto = clienteRequest.getNomeCompleto();
+			this.email = clienteRequest.getEmail();
+			this.celular = clienteRequest.getCelular();
+			this.telefone = clienteRequest.getTelefone();
+			this.sexo = clienteRequest.getSexo();
+			this.cpf = clienteRequest.getCpf();
+			this.aceitaTermos = clienteRequest.getAceitaTermos();
+			this.dataHoraDoCadastro = LocalDateTime.now();
+		}
 }		
