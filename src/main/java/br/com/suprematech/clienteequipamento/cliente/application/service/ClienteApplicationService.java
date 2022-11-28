@@ -1,7 +1,10 @@
 package br.com.suprematech.clienteequipamento.cliente.application.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteListResponse;
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteRequest;
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteResponse;
 import br.com.suprematech.clienteequipamento.cliente.application.domain.Cliente;
@@ -23,4 +26,11 @@ public class ClienteApplicationService implements ClienteService {
 				.idCliente(cliente.getIdCliente())
 				.build(); 
 		}
+
+	@Override
+	public List<ClienteListResponse> buscarTodosClientes() {
+		log.info("[inicia] ClienteApplicationService - buscarTodosClientes");
+		log.info("[inicia] ClienteApplicationService - buscarTodosClientes");
+		return null;
+	}
 }
