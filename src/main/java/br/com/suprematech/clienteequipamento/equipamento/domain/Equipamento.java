@@ -36,7 +36,6 @@ public class Equipamento {
 	@NotBlank
 	private String modelo;
 	@NotNull
-	@Enumerated(EnumType.STRING)
 	private String numeroDeSerie;
 	private String defeito;
 	private Boolean equipamentoComCaboDeForça;
