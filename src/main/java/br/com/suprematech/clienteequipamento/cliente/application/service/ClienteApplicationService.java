@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteAlteracaoRequest;
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteDetalhadoResponse;
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteListResponse;
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteRequest;
@@ -51,6 +52,14 @@ public class ClienteApplicationService implements ClienteService {
 		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
 		clienteRepository.deletaCliente(cliente);
 		log.info("[finaliza] ClienteApplicationService - deletaClienteAtravesId");
+		
+	}
+
+	@Override
+	public void pathAlteraCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest) {
+		log.info("[inicia] ClienteApplicationService - pathAlteraCliente");
+		Cliente cliente = clienteRepository.buscaClienteAtravesId(idCliente);
+		log.info("[finaliza] ClienteApplicationService - pathAlteraCliente");
 		
 	}
 }
