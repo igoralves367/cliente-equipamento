@@ -14,6 +14,6 @@ public interface ClienteService {
 	List<ClienteListResponse> buscarTodosClientes();
 	ClienteDetalhadoResponse buscaClienteAtravesId(UUID idCliente);
 	void deletaClienteAtravesId(UUID idCliente);
-	void pathAlteraCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest);
+	void patchAlteraCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest);
 
 }
