@@ -10,9 +10,11 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +22,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 public class Equipamento {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(columnDefinition = "uuid", name = "idEquipamento", updatable = false, unique = true, nullable = false)
@@ -43,5 +46,14 @@ public class Equipamento {
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraDaUltimaAlteracao;
 
-
+	public Equipamento(UUID idCliente, @Valid EquipamentoRequest equipamentoRequest) {
+		this.idClienteDono = idCliente;
+		this.tipoDeEquipamento = equipamentoRequest.getTipoDeEquipamento();
+		this.marca = equipamentoRequest.getMarca();
+		this.modelo = equipamentoRequest.getModelo();
+		this.numeroDeSerie = equipamentoRequest.getNumeroDeSerie();
+		this.defeito = equipamentoRequest.getDefeito();
+		this.equipamentoComCaboDeForça = equipamentoRequest.getEquipamentoComCaboDeForça();
+		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
 }
