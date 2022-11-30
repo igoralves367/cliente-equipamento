@@ -26,8 +26,9 @@ public class EquipamentoInfraRepository implements EquipamentoRepository {
 	@Override
 	public List<Equipamento> buscaEquipamentosDoClienteComId(UUID idCliente) {
 		log.info("[inicia] EquipamentoInfraRepository - buscaEquipamentosDoClienteComId");
+		var equipamentos = equipamentoSpringaDataJPARepository.findByIdClienteDono(idCliente);
 		log.info("[finaliza] EquipamentoInfraRepository - buscaEquipamentosDoClienteComId");
-		return null;
+		return equipamentos;
 	}
 
 }

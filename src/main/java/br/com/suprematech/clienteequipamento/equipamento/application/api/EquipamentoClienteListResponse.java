@@ -2,6 +2,7 @@ package br.com.suprematech.clienteequipamento.equipamento.application.api;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import br.com.suprematech.clienteequipamento.equipamento.domain.Equipamento;
 import br.com.suprematech.clienteequipamento.equipamento.domain.Marca;
@@ -19,7 +20,20 @@ public class EquipamentoClienteListResponse {
 	
 	
 	public static List<EquipamentoClienteListResponse> converte(List<Equipamento> equipamentosDoCliente) {
-		// TODO Auto-generated method stub
-		return null;
+		return equipamentosDoCliente.stream()
+				.map(EquipamentoClienteListResponse::new)
+				.collect(Collectors.toList());
 	}
+
+
+	public EquipamentoClienteListResponse(Equipamento equipamento) {
+		this.idEquipamento = equipamento.getIdEquipamento();
+		this.tipoDeEquipamento = equipamento.getTipoDeEquipamento();
+		this.marca = equipamento.getMarca();
+		this.modelo = equipamento.getModelo();
+		this.numeroDeSerie = equipamento.getNumeroDeSerie();
+		this.defeito = equipamento.getDefeito();
+		this.equipamentoComCaboDeForça = equipamento.getEquipamentoComCaboDeForça();
+	}
+	
 }
