@@ -1,5 +1,6 @@
 package br.com.suprematech.clienteequipamento.equipamento.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.validation.Valid;
@@ -22,5 +23,13 @@ public class EquipamentoController implements EquipamentoAPI {
 		EquipamentoResponse equipamento = equipamentoService.criaEquipamento(idCliente, equipamentoRequest);
 		log.info("[finaliza] EquipamentoController - postEquipamento");
 		return equipamento;
+	}
+
+	@Override
+	public List<EquipamentoClienteListResponse> getEquipamentosDoClienteComId(UUID idCliente) {
+		log.info("[inicia] EquipamentoController - getEquipamentosDoClienteComId");
+		log.info("[idCliente] {}", idCliente);
+		log.info("[finaliza] EquipamentoController - getEquipamentosDoClienteComId");
+		return null;
 	}
 }
