@@ -1,5 +1,9 @@
 package br.com.suprematech.clienteequipamento.equipamento.application.api;
 
-public class EquipamentoResponse {
+import java.util.UUID;
 
+import lombok.Value;
+@Value
+public class EquipamentoResponse {
+	private UUID idEquipamento;
 }

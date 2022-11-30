@@ -29,7 +29,7 @@ public class Equipamento {
 	private UUID idClienteDono;
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private TipoDeEquipamento TipoDeEquipamento;
+	private TipoDeEquipamento tipoDeEquipamento;
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private Marca marca;

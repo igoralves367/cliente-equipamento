@@ -14,8 +14,8 @@ public class EquipamentoController implements EquipamentoAPI {
 	@Override
 	public EquipamentoResponse postEquipamento(UUID idCliente, @Valid EquipamentoRequest equipamentoRequest) {
 		log.info("[inicia] EquipamentoController - postEquipamento");
+		log.info("[idCliente] {}", idCliente);
 		log.info("[finaliza] EquipamentoController - postEquipamento");
 		return null;
 	}
-
 }
