@@ -1,5 +1,6 @@
 package br.com.suprematech.clienteequipamento.equipamento.application.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.validation.Valid;
@@ -7,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import br.com.suprematech.clienteequipamento.cliente.application.service.ClienteService;
+import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteListResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoRequest;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.repository.EquipamentoRepository;
@@ -25,8 +27,16 @@ public class EquipamentoApplicationService implements EquipamentoService {
 		log.info("[inicia] EquipamentoApplicationService - criaEquipamento");
 		clienteService.buscaClienteAtravesId(idCliente);
 		Equipamento equipamento = equipamentoRepository.salvaEquipamento(new Equipamento(idCliente, equipamentoRequest));
-		log.info("[inicia] EquipamentoApplicationService - criaEquipamento");
+		log.info("[finaliza] EquipamentoApplicationService - criaEquipamento");
 		return new EquipamentoResponse(equipamento.getIdEquipamento());
+	}
+
+	@Override
+	public List<EquipamentoClienteListResponse> buscaEquipamentosDoClienteComId(UUID idCliente) {
+		log.info("[inicia] EquipamentoApplicationService - buscaEquipamentosDoClienteComId");
+		clienteService.buscaClienteAtravesId(idCliente);
+		log.info("[finaliza] EquipamentoApplicationService - buscaEquipamentosDoClienteComId");
+		return null;
 	}
 
 }
