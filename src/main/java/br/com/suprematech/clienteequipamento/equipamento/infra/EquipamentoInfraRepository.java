@@ -1,5 +1,8 @@
 package br.com.suprematech.clienteequipamento.equipamento.infra;
 
+import java.util.List;
+import java.util.UUID;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.suprematech.clienteequipamento.equipamento.application.repository.EquipamentoRepository;
@@ -16,8 +19,15 @@ public class EquipamentoInfraRepository implements EquipamentoRepository {
 	public Equipamento salvaEquipamento(Equipamento equipamento) {
 		log.info("[inicia] EquipamentoInfraRepository - salvaEquipamento");
 		equipamentoSpringaDataJPARepository.save(equipamento);
-		log.info("[inicia] EquipamentoInfraRepository - salvaEquipamento");
+		log.info("[finaliza] EquipamentoInfraRepository - salvaEquipamento");
 		return equipamento;
+	}
+
+	@Override
+	public List<Equipamento> buscaEquipamentosDoClienteComId(UUID idCliente) {
+		log.info("[inicia] EquipamentoInfraRepository - buscaEquipamentosDoClienteComId");
+		log.info("[finaliza] EquipamentoInfraRepository - buscaEquipamentosDoClienteComId");
+		return null;
 	}
 
 }

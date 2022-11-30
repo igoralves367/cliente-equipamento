@@ -35,8 +35,9 @@ public class EquipamentoApplicationService implements EquipamentoService {
 	public List<EquipamentoClienteListResponse> buscaEquipamentosDoClienteComId(UUID idCliente) {
 		log.info("[inicia] EquipamentoApplicationService - buscaEquipamentosDoClienteComId");
 		clienteService.buscaClienteAtravesId(idCliente);
+		List<Equipamento> equipamentosDoCliente = equipamentoRepository.buscaEquipamentosDoClienteComId(idCliente);
 		log.info("[finaliza] EquipamentoApplicationService - buscaEquipamentosDoClienteComId");
-		return null;
+		return EquipamentoClienteListResponse.converte(equipamentosDoCliente);
 	}
 
 }
