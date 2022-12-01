@@ -33,4 +33,12 @@ public class EquipamentoController implements EquipamentoAPI {
 		log.info("[finaliza] EquipamentoController - getEquipamentosDoClienteComId");
 		return equipamentosDoCliente;
 	}
+
+	@Override
+	public EquipamentoClienteDetalhadoResponse getEquipamentoDoClienteComId(UUID idCliente, UUID idEquipamento) {
+		log.info("[inicia] EquipamentoController - getEquipamentoDoClienteComId");
+		log.info("[idCliente] {} - [idEquipamento] {}", idCliente, idEquipamento);
+		log.info("[finaliza] EquipamentoController - getEquipamentoDoClienteComId");
+		return null;
+	}
 }

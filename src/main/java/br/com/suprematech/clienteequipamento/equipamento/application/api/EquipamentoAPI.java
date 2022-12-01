@@ -27,4 +27,9 @@ public interface EquipamentoAPI {
 	@ResponseStatus(code = HttpStatus.OK)
 	List<EquipamentoClienteListResponse> getEquipamentosDoClienteComId
 	(@PathVariable UUID idCliente);
+	
+	@GetMapping(value = "/{idEquipamento}")
+	@ResponseStatus(code = HttpStatus.OK)
+	EquipamentoClienteDetalhadoResponse getEquipamentoDoClienteComId
+	(@PathVariable UUID idCliente, @PathVariable UUID idEquipamento);
 }
