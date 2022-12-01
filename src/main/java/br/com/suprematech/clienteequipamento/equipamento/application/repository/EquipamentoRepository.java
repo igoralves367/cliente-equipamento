@@ -8,5 +8,6 @@ import br.com.suprematech.clienteequipamento.equipamento.domain.Equipamento;
 public interface EquipamentoRepository {
 	Equipamento salvaEquipamento(Equipamento equipamento);
 	List<Equipamento> buscaEquipamentosDoClienteComId(UUID idCliente);
+	Equipamento buscaEquipamentoPeloId(UUID idEquipamento);
 
 }

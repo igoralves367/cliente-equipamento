@@ -3,10 +3,12 @@ package br.com.suprematech.clienteequipamento.equipamento.infra;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import br.com.suprematech.clienteequipamento.equipamento.application.repository.EquipamentoRepository;
 import br.com.suprematech.clienteequipamento.equipamento.domain.Equipamento;
+import br.com.suprematech.clienteequipamento.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 @Repository
@@ -29,6 +31,15 @@ public class EquipamentoInfraRepository implements EquipamentoRepository {
 		var equipamentos = equipamentoSpringaDataJPARepository.findByIdClienteDono(idCliente);
 		log.info("[finaliza] EquipamentoInfraRepository - buscaEquipamentosDoClienteComId");
 		return equipamentos;
+	}
+
+	@Override
+	public Equipamento buscaEquipamentoPeloId(UUID idEquipamento) {
+		log.info("[inicia] EquipamentoInfraRepository - buscaEquipamentoPeloId");
+		var equipamento = equipamentoSpringaDataJPARepository.findById(idEquipamento)
+				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Equipamento não encontrado para o idEquipamento = " + idEquipamento));
+		log.info("[finaliza] EquipamentoInfraRepository - buscaEquipamentoPeloId");
+		return equipamento;
 	}
 
 }
