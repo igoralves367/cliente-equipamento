@@ -38,7 +38,8 @@ public class EquipamentoController implements EquipamentoAPI {
 	public EquipamentoClienteDetalhadoResponse getEquipamentoDoClienteComId(UUID idCliente, UUID idEquipamento) {
 		log.info("[inicia] EquipamentoController - getEquipamentoDoClienteComId");
 		log.info("[idCliente] {} - [idEquipamento] {}", idCliente, idEquipamento);
+		EquipamentoClienteDetalhadoResponse equipamento = equipamentoService.buscaEquipamentoDoClienteComId(idCliente,idEquipamento);
 		log.info("[finaliza] EquipamentoController - getEquipamentoDoClienteComId");
-		return null;
+		return equipamento;
 	}
 }

@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
+import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteDetalhadoResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteListResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoRequest;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoResponse;
@@ -12,5 +13,6 @@ import br.com.suprematech.clienteequipamento.equipamento.application.api.Equipam
 public interface EquipamentoService {
 	EquipamentoResponse criaEquipamento(UUID idCliente, @Valid EquipamentoRequest equipamentoRequest);
 	List<EquipamentoClienteListResponse> buscaEquipamentosDoClienteComId(UUID idCliente);
+	EquipamentoClienteDetalhadoResponse buscaEquipamentoDoClienteComId(UUID idCliente, UUID idEquipamento);
 
 }

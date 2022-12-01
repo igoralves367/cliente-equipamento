@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import br.com.suprematech.clienteequipamento.cliente.application.service.ClienteService;
+import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteDetalhadoResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteListResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoRequest;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoResponse;
@@ -38,6 +39,14 @@ public class EquipamentoApplicationService implements EquipamentoService {
 		List<Equipamento> equipamentosDoCliente = equipamentoRepository.buscaEquipamentosDoClienteComId(idCliente);
 		log.info("[finaliza] EquipamentoApplicationService - buscaEquipamentosDoClienteComId");
 		return EquipamentoClienteListResponse.converte(equipamentosDoCliente);
+	}
+
+	@Override
+	public EquipamentoClienteDetalhadoResponse buscaEquipamentoDoClienteComId(UUID idCliente, UUID idEquipamento) {
+		log.info("[inicia] EquipamentoApplicationService - buscaEquipamentoDoClienteComId");
+		clienteService.buscaClienteAtravesId(idCliente);
+		log.info("[finaliza] EquipamentoApplicationService - buscaEquipamentoDoClienteComId");
+		return null;
 	}
 
 }
