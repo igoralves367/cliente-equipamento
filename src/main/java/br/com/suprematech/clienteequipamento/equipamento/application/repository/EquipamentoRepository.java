@@ -9,5 +9,6 @@ public interface EquipamentoRepository {
 	Equipamento salvaEquipamento(Equipamento equipamento);
 	List<Equipamento> buscaEquipamentosDoClienteComId(UUID idCliente);
 	Equipamento buscaEquipamentoPeloId(UUID idEquipamento);
+	void deletaEquipamento(Equipamento equipamento);
 
 }

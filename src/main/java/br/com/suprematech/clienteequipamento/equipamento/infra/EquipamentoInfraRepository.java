@@ -42,4 +42,12 @@ public class EquipamentoInfraRepository implements EquipamentoRepository {
 		return equipamento;
 	}
 
+	@Override
+	public void deletaEquipamento(Equipamento equipamento) {
+		log.info("[inicia] EquipamentoInfraRepository - deletaEquipamento");
+		equipamentoSpringaDataJPARepository.delete(equipamento);
+		log.info("[finaliza] EquipamentoInfraRepository - deletaEquipamento");
+		
+	}
+
 }
