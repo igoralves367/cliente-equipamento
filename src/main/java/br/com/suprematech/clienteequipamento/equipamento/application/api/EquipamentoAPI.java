@@ -43,4 +43,9 @@ public interface EquipamentoAPI {
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void patchtEquipamento(@PathVariable UUID idCliente, @PathVariable UUID idEquipamento,
 			@Valid @RequestBody EquipamentoAlteracaoRequest equipamentoAlteracaoRequest);
+	
+	@GetMapping(value = "/{tipoDeEquipamento}/{marca}/{modelo}")
+	@ResponseStatus(code = HttpStatus.OK)
+	List<EquipamentoClienteListResponseParametro> getEquipamentosDoClienteParametro
+	(@PathVariable UUID idCliente);
 }

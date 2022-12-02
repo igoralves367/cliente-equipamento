@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import br.com.suprematech.clienteequipamento.cliente.application.service.ClienteService;
+import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoAlteracaoRequest;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteDetalhadoResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteListResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoRequest;
@@ -60,12 +61,14 @@ public class EquipamentoApplicationService implements EquipamentoService {
 	}
 
 	@Override
-	public void aleraEquipamentoClienteComId(UUID idCliente, UUID idEquipamento) {
+	public void aleraEquipamentoClienteComId(UUID idCliente, UUID idEquipamento,
+			EquipamentoAlteracaoRequest equipamentoAlteracaoRequest) {
 		log.info("[inicia] EquipamentoApplicationService - aleraEquipamentoClienteComId");
 		clienteService.buscaClienteAtravesId(idCliente);
 		Equipamento equipamento = equipamentoRepository.buscaEquipamentoPeloId(idEquipamento);
+		equipamento.altera(equipamentoAlteracaoRequest);
+		equipamentoRepository.salvaEquipamento(equipamento);
 		log.info("[finaliza] EquipamentoApplicationService - aleraEquipamentoClienteComId");
-		
 	}
 
 }

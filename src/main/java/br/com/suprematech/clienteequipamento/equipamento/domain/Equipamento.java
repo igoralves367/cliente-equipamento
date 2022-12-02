@@ -14,6 +14,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoAlteracaoRequest;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoRequest;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -55,5 +56,16 @@ public class Equipamento {
 		this.defeito = equipamentoRequest.getDefeito();
 		this.equipamentoComCaboDeForça = equipamentoRequest.getEquipamentoComCaboDeForça();
 		this.dataHoraDoCadastro = LocalDateTime.now();
+	}
+
+	public void altera(EquipamentoAlteracaoRequest equipamentoRequest) {
+		this.tipoDeEquipamento = equipamentoRequest.getTipoDeEquipamento();
+		this.marca = equipamentoRequest.getMarca();
+		this.modelo = equipamentoRequest.getModelo();
+		this.numeroDeSerie = equipamentoRequest.getNumeroDeSerie();
+		this.defeito = equipamentoRequest.getDefeito();
+		this.equipamentoComCaboDeForça = equipamentoRequest.getEquipamentoComCaboDeForça();
+		this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
+		
 	}
 }

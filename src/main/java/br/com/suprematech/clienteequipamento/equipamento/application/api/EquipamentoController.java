@@ -56,7 +56,15 @@ public class EquipamentoController implements EquipamentoAPI {
 			@Valid EquipamentoAlteracaoRequest equipamentoAlteracaoRequest) {
 		log.info("[inicia] EquipamentoController - EquipamentoAlteracaoRequest");
 		log.info("[idCliente] {} - [idEquipamento] {}", idCliente, idEquipamento);
-		equipamentoService.aleraEquipamentoClienteComId(idCliente, idEquipamento);
+		equipamentoService.aleraEquipamentoClienteComId(idCliente, idEquipamento,equipamentoAlteracaoRequest);
 		log.info("[finaliza] EquipamentoController - EquipamentoAlteracaoRequest");		
+	}
+
+	@Override
+	public List<EquipamentoClienteListResponseParametro> getEquipamentosDoClienteParametro(UUID idCliente) {
+		log.info("[inicia] EquipamentoController - getEquipamentosDoClienteParametro");
+		log.info("[idCliente] {}", idCliente);
+		log.info("[finaliza] EquipamentoController - getEquipamentosDoClienteParametro");
+		return null;
 	}
 }
