@@ -11,6 +11,7 @@ import br.com.suprematech.clienteequipamento.cliente.application.service.Cliente
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoAlteracaoRequest;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteDetalhadoResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteListResponse;
+import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteListResponseParametro;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoRequest;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.repository.EquipamentoRepository;
@@ -69,6 +70,14 @@ public class EquipamentoApplicationService implements EquipamentoService {
 		equipamento.altera(equipamentoAlteracaoRequest);
 		equipamentoRepository.salvaEquipamento(equipamento);
 		log.info("[finaliza] EquipamentoApplicationService - aleraEquipamentoClienteComId");
+	}
+
+	@Override
+	public List<EquipamentoClienteListResponseParametro> buscaEquipamentosDoClienteParametro(UUID idCliente) {
+		log.info("[inicia] EquipamentoApplicationService - buscaEquipamentosDoClienteParametro");
+		clienteService.buscaClienteAtravesId(idCliente);
+		log.info("[finaliza] EquipamentoApplicationService - buscaEquipamentosDoClienteParametro");
+		return null;
 	}
 
 }

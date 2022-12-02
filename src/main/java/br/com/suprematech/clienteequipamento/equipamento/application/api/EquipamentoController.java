@@ -64,7 +64,8 @@ public class EquipamentoController implements EquipamentoAPI {
 	public List<EquipamentoClienteListResponseParametro> getEquipamentosDoClienteParametro(UUID idCliente) {
 		log.info("[inicia] EquipamentoController - getEquipamentosDoClienteParametro");
 		log.info("[idCliente] {}", idCliente);
+		List<EquipamentoClienteListResponseParametro> equipamentosDoClienteParametro = equipamentoService.buscaEquipamentosDoClienteParametro(idCliente);
 		log.info("[finaliza] EquipamentoController - getEquipamentosDoClienteParametro");
-		return null;
+		return equipamentosDoClienteParametro;
 	}
 }

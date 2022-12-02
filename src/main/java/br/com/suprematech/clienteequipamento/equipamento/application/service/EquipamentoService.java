@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoAlteracaoRequest;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteDetalhadoResponse;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteListResponse;
+import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoClienteListResponseParametro;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoRequest;
 import br.com.suprematech.clienteequipamento.equipamento.application.api.EquipamentoResponse;
 
@@ -17,5 +18,6 @@ public interface EquipamentoService {
 	EquipamentoClienteDetalhadoResponse buscaEquipamentoDoClienteComId(UUID idCliente, UUID idEquipamento);
 	void deleteEquipamentoClienteComId(UUID idCliente, UUID idEquipamento);
 	void aleraEquipamentoClienteComId(UUID idCliente, UUID idEquipamento, EquipamentoAlteracaoRequest equipamentoAlteracaoRequest);
+	List<EquipamentoClienteListResponseParametro> buscaEquipamentosDoClienteParametro(UUID idCliente);
 
 }
