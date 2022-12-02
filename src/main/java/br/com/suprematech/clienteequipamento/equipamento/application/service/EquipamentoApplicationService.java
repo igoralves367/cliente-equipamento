@@ -76,8 +76,9 @@ public class EquipamentoApplicationService implements EquipamentoService {
 	public List<EquipamentoClienteListResponseParametro> buscaEquipamentosDoClienteParametro(UUID idCliente) {
 		log.info("[inicia] EquipamentoApplicationService - buscaEquipamentosDoClienteParametro");
 		clienteService.buscaClienteAtravesId(idCliente);
+		List<Equipamento> equipamentosDoClienteParametro = equipamentoRepository.buscaEquipamentosDoClienteParametro(idCliente);
 		log.info("[finaliza] EquipamentoApplicationService - buscaEquipamentosDoClienteParametro");
-		return null;
+		return EquipamentoClienteListResponseParametro.converte(equipamentosDoClienteParametro);
 	}
 
 }

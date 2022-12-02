@@ -50,4 +50,12 @@ public class EquipamentoInfraRepository implements EquipamentoRepository {
 		
 	}
 
+	@Override
+	public List<Equipamento> buscaEquipamentosDoClienteParametro(UUID idCliente) {
+		log.info("[inicia] EquipamentoInfraRepository - buscaEquipamentosDoClienteParametro");
+		var equipamentos = equipamentoSpringaDataJPARepository.findByIdClienteDono(idCliente);
+		log.info("[inicia] EquipamentoInfraRepository - buscaEquipamentosDoClienteParametro");
+		return equipamentos;
+	}
+
 }
