@@ -14,5 +14,6 @@ public interface EquipamentoService {
 	EquipamentoResponse criaEquipamento(UUID idCliente, @Valid EquipamentoRequest equipamentoRequest);
 	List<EquipamentoClienteListResponse> buscaEquipamentosDoClienteComId(UUID idCliente);
 	EquipamentoClienteDetalhadoResponse buscaEquipamentoDoClienteComId(UUID idCliente, UUID idEquipamento);
+	void deleteEquipamentoClienteComId(UUID idCliente, UUID idEquipamento);
 
 }

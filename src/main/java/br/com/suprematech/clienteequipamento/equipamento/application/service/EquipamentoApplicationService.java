@@ -50,4 +50,11 @@ public class EquipamentoApplicationService implements EquipamentoService {
 		return new EquipamentoClienteDetalhadoResponse(equipamento);
 	}
 
+	@Override
+	public void deleteEquipamentoClienteComId(UUID idCliente, UUID idEquipamento) {
+		log.info("[inicia] EquipamentoApplicationService - deleteEquipamentoClienteComId");
+		clienteService.buscaClienteAtravesId(idCliente);	
+		log.info("[finaliza] EquipamentoApplicationService - deleteEquipamentoClienteComId");
+	}
+
 }
