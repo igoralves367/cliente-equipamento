@@ -56,7 +56,7 @@ public class EquipamentoController implements EquipamentoAPI {
 			@Valid EquipamentoAlteracaoRequest equipamentoAlteracaoRequest) {
 		log.info("[inicia] EquipamentoController - EquipamentoAlteracaoRequest");
 		log.info("[idCliente] {} - [idEquipamento] {}", idCliente, idEquipamento);
-		log.info("[finaliza] EquipamentoController - EquipamentoAlteracaoRequest");
-		
+		equipamentoService.aleraEquipamentoClienteComId(idCliente, idEquipamento);
+		log.info("[finaliza] EquipamentoController - EquipamentoAlteracaoRequest");		
 	}
 }

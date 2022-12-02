@@ -15,5 +15,6 @@ public interface EquipamentoService {
 	List<EquipamentoClienteListResponse> buscaEquipamentosDoClienteComId(UUID idCliente);
 	EquipamentoClienteDetalhadoResponse buscaEquipamentoDoClienteComId(UUID idCliente, UUID idEquipamento);
 	void deleteEquipamentoClienteComId(UUID idCliente, UUID idEquipamento);
+	void aleraEquipamentoClienteComId(UUID idCliente, UUID idEquipamento);
 
 }
