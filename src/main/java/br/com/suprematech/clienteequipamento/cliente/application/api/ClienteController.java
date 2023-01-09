@@ -61,7 +61,8 @@ public class ClienteController implements ClienteAPI {
 	public ClienteResponseCpf getClienteAtravesDoCpf(String cpf) {
 		log.info("[inicia] ClienteController - getClienteAtravesDoCpf");
 		log.info("[idCliente] {}", cpf);
+		ClienteResponseCpf clienteResponseCpf = clienteService.getClienteAtravesDoCpf(cpf);
 		log.info("[Finaliza] ClienteController - getClienteAtravesDoCpf");
-		return null;
+		return clienteResponseCpf;
 	}
 }

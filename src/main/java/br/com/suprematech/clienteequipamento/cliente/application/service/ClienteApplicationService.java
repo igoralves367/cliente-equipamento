@@ -10,6 +10,7 @@ import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteDeta
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteListResponse;
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteRequest;
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteResponse;
+import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteResponseCpf;
 import br.com.suprematech.clienteequipamento.cliente.application.domain.Cliente;
 import br.com.suprematech.clienteequipamento.cliente.application.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
@@ -63,5 +64,12 @@ public class ClienteApplicationService implements ClienteService {
 		clienteRepository.salva(cliente);
 		log.info("[finaliza] ClienteApplicationService - pathAlteraCliente");
 		
+	}
+
+	@Override
+	public ClienteResponseCpf getClienteAtravesDoCpf(String cpf) {
+		log.info("[inicia] ClienteApplicationService - getClienteAtravesDoCpf");
+		log.info("[finaliza] ClienteApplicationService - getClienteAtravesDoCpf");
+		return null;
 	}
 }

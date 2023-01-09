@@ -8,6 +8,7 @@ import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteDeta
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteListResponse;
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteRequest;
 import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteResponse;
+import br.com.suprematech.clienteequipamento.cliente.application.api.ClienteResponseCpf;
 
 public interface ClienteService {
 	ClienteResponse criaCliente(ClienteRequest clienteRequest);
@@ -15,5 +16,5 @@ public interface ClienteService {
 	ClienteDetalhadoResponse buscaClienteAtravesId(UUID idCliente);
 	void deletaClienteAtravesId(UUID idCliente);
 	void patchAlteraCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest);
-
+	ClienteResponseCpf getClienteAtravesDoCpf(String cpf);
 }
