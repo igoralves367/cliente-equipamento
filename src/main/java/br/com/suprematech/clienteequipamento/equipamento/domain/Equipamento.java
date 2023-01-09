@@ -43,6 +43,8 @@ public class Equipamento {
 	private String numeroDeSerie;
 	private String defeito;
 	private Boolean equipamentoComCaboDeForça;
+	private StatusServico statusServico;
+	private String LaudoDoServico;
 	
 	private LocalDateTime dataHoraDoCadastro;
 	private LocalDateTime dataHoraDaUltimaAlteracao;
