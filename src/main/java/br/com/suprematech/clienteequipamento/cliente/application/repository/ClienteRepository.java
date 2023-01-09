@@ -10,5 +10,5 @@ public interface ClienteRepository {
 	List<Cliente> buscaTodosClientes();
 	Cliente buscaClienteAtravesId(UUID idCliente);
 	void deletaCliente(Cliente cliente);
-
+	Cliente getClienteAtravesDoCpf(String cpf);
 }
