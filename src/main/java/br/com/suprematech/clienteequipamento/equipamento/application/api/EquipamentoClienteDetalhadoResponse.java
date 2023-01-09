@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import br.com.suprematech.clienteequipamento.equipamento.domain.Equipamento;
 import br.com.suprematech.clienteequipamento.equipamento.domain.Marca;
+import br.com.suprematech.clienteequipamento.equipamento.domain.StatusServico;
 import br.com.suprematech.clienteequipamento.equipamento.domain.TipoDeEquipamento;
 import lombok.Value;
 @Value
@@ -16,6 +17,9 @@ public class EquipamentoClienteDetalhadoResponse {
 	private String numeroDeSerie;
 	private String defeito;
 	private Boolean equipamentoComCaboDeForça;
+	private StatusServico statusServico;
+	private String LaudoDoServico;
+	
 	
 	public EquipamentoClienteDetalhadoResponse(Equipamento equipamento) {
 		this.idEquipamento = equipamento.getIdEquipamento();
@@ -25,5 +29,7 @@ public class EquipamentoClienteDetalhadoResponse {
 		this.numeroDeSerie = equipamento.getNumeroDeSerie();
 		this.defeito = equipamento.getDefeito();
 		this.equipamentoComCaboDeForça = equipamento.getEquipamentoComCaboDeForça();
+		this.statusServico = equipamento.getStatusServico();
+		this.LaudoDoServico = equipamento.getLaudoDoServico();
 	}
 }

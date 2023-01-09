@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import br.com.suprematech.clienteequipamento.equipamento.domain.Equipamento;
 import br.com.suprematech.clienteequipamento.equipamento.domain.Marca;
+import br.com.suprematech.clienteequipamento.equipamento.domain.StatusServico;
 import br.com.suprematech.clienteequipamento.equipamento.domain.TipoDeEquipamento;
 import lombok.Getter;
 @Getter
@@ -17,6 +18,8 @@ public class EquipamentoClienteListResponse {
 	private String numeroDeSerie;
 	private String defeito;
 	private Boolean equipamentoComCaboDeForça;
+	private StatusServico statusServico;
+	private String LaudoDoServico;
 	
 	
 	public static List<EquipamentoClienteListResponse> converte(List<Equipamento> equipamentosDoCliente) {
@@ -34,6 +37,7 @@ public class EquipamentoClienteListResponse {
 		this.numeroDeSerie = equipamento.getNumeroDeSerie();
 		this.defeito = equipamento.getDefeito();
 		this.equipamentoComCaboDeForça = equipamento.getEquipamentoComCaboDeForça();
-	}
-	
+		this.statusServico = equipamento.getStatusServico();
+		this.LaudoDoServico = equipamento.getLaudoDoServico();
+	}	
 }
