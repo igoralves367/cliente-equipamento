@@ -56,4 +56,12 @@ public class ClienteController implements ClienteAPI {
 		clienteService.patchAlteraCliente(idCliente, clienteAlteracaoRequest);
 		log.info("[Finaliza] ClienteController - patchAlteraCliente");
 	}
+
+	@Override
+	public ClienteResponseCpf getClienteAtravesDoCpf(String cpf) {
+		log.info("[inicia] ClienteController - getClienteAtravesDoCpf");
+		log.info("[idCliente] {}", cpf);
+		log.info("[Finaliza] ClienteController - getClienteAtravesDoCpf");
+		return null;
+	}
 }
