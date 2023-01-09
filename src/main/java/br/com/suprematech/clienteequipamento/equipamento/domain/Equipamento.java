@@ -57,6 +57,8 @@ public class Equipamento {
 		this.numeroDeSerie = equipamentoRequest.getNumeroDeSerie();
 		this.defeito = equipamentoRequest.getDefeito();
 		this.equipamentoComCaboDeForça = equipamentoRequest.getEquipamentoComCaboDeForça();
+		this.statusServico = equipamentoRequest.getStatusServico();
+		this.LaudoDoServico = equipamentoRequest.getLaudoDoServico();
 		this.dataHoraDoCadastro = LocalDateTime.now();
 	}
 

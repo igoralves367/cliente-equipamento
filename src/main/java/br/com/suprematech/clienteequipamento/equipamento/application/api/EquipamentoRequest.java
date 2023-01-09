@@ -4,6 +4,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import br.com.suprematech.clienteequipamento.equipamento.domain.Marca;
+import br.com.suprematech.clienteequipamento.equipamento.domain.StatusServico;
 import br.com.suprematech.clienteequipamento.equipamento.domain.TipoDeEquipamento;
 import lombok.Value;
 @Value
@@ -17,5 +18,6 @@ public class EquipamentoRequest {
 	private String numeroDeSerie;
 	private String defeito;
 	private Boolean equipamentoComCaboDeForça;
-
+	private StatusServico statusServico;
+	private String LaudoDoServico;
 }
